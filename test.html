@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <script src="https://www.x3dom.org/download/x3dom.js"></script>
+    <link rel="stylesheet" href="https://www.x3dom.org/download/x3dom.css">
+</head>
+<body>
+    <x3d width="800px" height="600px">
+        <scene>
+            <!-- Set background image -->
+            <background>
+                <ImageTexture url="votre_image.jpg"></ImageTexture>
+            </background>
+
+            <!-- Add a PointLight -->
+            <PointLight location="0 0 0" intensity="1" color="1 1 1"></PointLight>
+
+            <!-- Add a DirectionalLight -->
+            <DirectionalLight direction="1 -1 -1" intensity="0.5" color="1 1 1"></DirectionalLight>
+
+            <!-- Add a SpotLight -->
+            <SpotLight location="0 5 0" direction="0 -1 0" beamWidth="0.5" cutOffAngle="0.7" intensity="0.8" color="1 1 1"></SpotLight>
+
+            <!-- Create the Sun with texture -->
+            <transform translation="0 0 0">
+                <shape>
+                    <sphere radius="1"></sphere>
+                    <appearance>
+                        <material>
+                            <ImageTexture url="EarthImage.jpg"></ImageTexture>
+                        </material>
+                    </appearance>
+                </shape>
+            </transform>
+
+            <!-- Create Earth with texture -->
+            <transform translation="3 0 0">
+                <shape>
+                    <sphere radius="0.5"></sphere>
+                    <appearance>
+                        <material>
+                            <ImageTexture url="EarthImage.jpg"></ImageTexture>
+                        </material>
+                    </appearance>
+                </shape>
+            </transform>
+
+            <!-- Create Mars with texture -->
+            <transform translation="5 0 0">
+                <shape>
+                    <sphere radius="0.4"></sphere>
+                    <appearance>
+                        <material>
+                            <ImageTexture url="EarthImage.jpg"></ImageTexture>
+                        </material>
+                    </appearance>
+                </shape>
+            </transform>
+        </scene>
+    </x3d>
+</body>
+</html>
